@@ -11,7 +11,7 @@ export default EventPage;
 export async function getStaticPaths() {
     const data = await import("/data/data.json");
     const {allEvents} = data;
-    const allPaths = allEvents.map((path) => {
+    const allPaths = allEvents?.map((path) => {
         return {
             params: {
                 cat: path.city,
